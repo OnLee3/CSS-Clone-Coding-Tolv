@@ -12,4 +12,116 @@ body {
   flex-direction: column;
   width: 100%;
   font-family: "Cormorant Garamond", serif;
+  margin-top: 60px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-right: 10%;
+  padding-left: 10%;
+  align-items: center;
+  h1 {
+    place-self: center center;
+  }
+  > span {
+    justify-self: end;
+  }
+  nav {
+    ul {
+      display: flex;
+      li:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  .logo {
+    font-size: 48px;
+    font-weight: 500;
+    display: flex;
+    span {
+      transform: rotateZ(-15deg);
+      margin: 0px -2px;
+    }
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: calc(100vh - 60px);
+  .hero__img {
+    background-image: url(https://source.unsplash.com/random);
+    background-size: cover;
+    background-position: center center;
+  }
+  .hero__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      font-size: 52px;
+      text-align: center;
+      width: 60%;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+a {
+  font-weight: 600;
+  color: $orange;
+}
+.banner {
+  background-color: #efcb56;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+  p {
+    width: 50%;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  span {
+    font-size: 12px;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50vh;
+  .gallery__item {
+    background-size: cover;
+    background-position: center center;
+    background-image: url(https://source.unsplash.com/random);
+    transition: all 0.2s linear;
+    &:first-child,
+    &:nth-child(5),
+    &:nth-child(8),
+    &:nth-child(10) {
+      grid-column-start: span 2;
+    }
+    &:hover {
+      filter: blur(50px);
+      cursor: pointer;
+    }
+  }
 }
